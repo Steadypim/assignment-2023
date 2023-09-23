@@ -1,6 +1,6 @@
-package org.example;
+package dev.steadypim.messageRestorer.dtos;
 
-public class Replacement {
+public class ReplacementDTO {
     private String replacement;
     private String source;
 
