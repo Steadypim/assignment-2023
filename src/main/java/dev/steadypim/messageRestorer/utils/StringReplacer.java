@@ -24,6 +24,7 @@ public class StringReplacer {
             }
 
             // Замена строк в данных
+
             for (int i = 0; i < data.size(); i++) {
                 String originalString = data.get(i);
                 for (Map.Entry<String, String> entry : replacementMap.entrySet()) {
@@ -35,6 +36,7 @@ public class StringReplacer {
                         if (replacementString == null) {
                             // Если replacementString равно null, удаляем
                             data.remove(i);
+                            i--;
                         } else {
                             data.set(i, originalString.replace(phraseToReplace, replacementString));
                         }
