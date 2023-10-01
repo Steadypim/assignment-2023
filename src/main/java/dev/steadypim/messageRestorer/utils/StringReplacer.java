@@ -26,13 +26,18 @@ public class StringReplacer {
             // Замена строк в данных
             for (int i = 0; i < data.size(); i++) {
                 String originalString = data.get(i);
-                if (replacementMap.containsKey(originalString)) {
-                    String replacementString = replacementMap.get(originalString);
-                    if (replacementString == null) {
-                        // Если replacementString равно null, удаляем
-                        data.remove(i);
-                    } else {
-                        data.set(i, replacementString);
+                for (Map.Entry<String, String> entry : replacementMap.entrySet()) {
+
+                    String phraseToReplace = entry.getKey();
+                    String replacementString = entry.getValue();
+
+                    if (originalString.contains(phraseToReplace)) {
+                        if (replacementString == null) {
+                            // Если replacementString равно null, удаляем
+                            data.remove(i);
+                        } else {
+                            data.set(i, originalString.replace(phraseToReplace, replacementString));
+                        }
                     }
                 }
             }
