@@ -20,7 +20,7 @@ public class StringReplacer {
 
             // Создание отображения для замены строк
             for (ReplacementDTO replacementDTO : replacementDTOS) {
-                replacementMap.put(replacementDTO.getReplacement(), replacementDTO.getSource());
+                replacementMap.put(replacementDTO.replacement(), replacementDTO.source());
             }
 
             // Замена строк в данных
